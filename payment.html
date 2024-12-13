@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Payment section</h2>
+    <button type="submit" onclick="paycost()">PAY NOW</button>
+    <script>
+       let urlParams = new URLSearchParams(window.location.search);
+       const name=urlParams.get('name');
+       const address=urlParams.get('address');
+       const broilerWeight=urlParams.get('broilerWeight');
+       const broilerCost=urlParams.get('broilerCost');
+       const naturalHenWeight=urlParams.get('naturalHenWeight');
+       const naturalHenCost=urlParams.get('naturalHenCost');
+       const goatWeight=urlParams.get('goatWeight');
+       const goatCost=urlParams.get('goatCost');
+       const totalCost=urlParams.get('totalCost');
+       const paymenttype=urlParams.get('paymenttype');  
+  
+       console.log(name,broilerCost,broilerWeight,naturalHenWeight,naturalHenCost,goatWeight,goatCost,totalCost);
+       document.write(`<table border="1">
+        <tr><th>NAME</th><th>ADDRESS</th><th>BROILER WEIGHT</th><th>BROILER COST</th><th>COUNTRY HEN WEIGHT</th><th>COUNTRY HEN COST</th><th>GOAT WEIGHT</th><th>GOAT COST</th><th>TOTAL COST</th><th>PAYMENT TYPE</th></tr>
+        <tr><td>${name}</td><td>${address}</td><td>${broilerWeight}</td><td>${broilerCost}</td><td>${naturalHenWeight}</td><td>${naturalHenCost}</td><td>${goatWeight}</td><td>${goatCost}</td><td>${totalCost}</td><td>${paymenttype}</td></tr>
+       </table>`);
+       
+
+</script>
+</body>
+</html>
